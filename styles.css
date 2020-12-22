@@ -84,7 +84,7 @@ body {
 }
 
 .main {
-    height: 1000px;
+    height: 850px;
 }
 
 .main__inner {
@@ -159,4 +159,29 @@ body {
     background: url(./img/durianSale.jpg);
     background-size: cover; 
     color: #6e0629;
+}
+
+.sale:hover {
+    background: #2a2029;
+    transition-delay: 1s;
+}
+
+.hit__container {
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.hit {
+    height: 300px;
+    width: 300px;
+    background: #6e0629;
+}
+
+.hit__img {
+    width: 250px;
+    margin-left: 25px;
+    margin-top: 20px;
 }

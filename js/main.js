@@ -6,4 +6,18 @@ function createSalesBlock(text1, text2, text3, text4) {
     return sales
 } 
 
+function createHit(imgUrl, name, price) {
+    const hit = document.createElement('div')
+    hit.classList.add('hit')
+    hit.innerHTML = `<img src="${imgUrl}" alt="${name}" class="hit__img">`
+    hit.innerHTML += `<p class="hit__name">${name}</p>`
+    hit.innerHTML += `<button class="hit__price">${price}</button>`
+    return hit
+}
+
+function createHitContainer() {
+    const hitContainer = document.createElement('div')
+    hitContainer.classList.add('hit__container')
+    return hitContainer
+}
 
