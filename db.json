@@ -1,5 +1,5 @@
 {
-  "products": [{
+  "products": {
     "url": "pizza_mozzarella",
     "productName": "Pizza Mozzarella",
     "productDescription": "About Pizza ... ",
@@ -10,4 +10,5 @@
     "spicy": false,
     "categoryId": 3,
     "recommended": true 
+  }
  }
