@@ -1,0 +1,162 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'EB Garamond', serif;
+}
+
+body {
+    width: 100vw;
+    background: url(./img/background.jpg);
+    background-size: cover;
+}
+
+.logo {
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    background-image: url(./img/logo.jpg);
+    background-size: cover;
+}
+
+.container {
+    width: 1200px;
+    height: 100%;
+    margin: auto;
+    background: #ffd6ff;
+}
+
+.header {
+    height: 150px;
+}
+
+.header__inner {
+    display: flex;
+    justify-content: space-around;
+    height: 100%;
+    background: linear-gradient(#fbe1e1, #f8ebc1, #fff1c1);
+}
+
+.logo-name {
+    width: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.name {
+    font-weight: bold;
+    font-style: italic;
+    font-size: 30px;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 500px;
+}
+
+.nav__link {
+    text-decoration: none;
+    color: #000;
+    font-size: 20px;
+}
+
+.order-cart {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 120px;
+}
+
+.order__link {
+    height: 50px;
+    width: 50px;
+    background-size: cover;
+}
+
+.cart {
+    background-image: url(./img/shopping-cart.svg);
+}
+
+.order {
+    background-image: url(./img/order.svg);
+}
+
+.main {
+    height: 1000px;
+}
+
+.main__inner {
+    background: #ffecec;
+}
+
+.footer {
+    height: 150px;
+}
+
+.footer__inner {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(#ffe58e, #f8ebc1, #ffcaca);
+}
+
+.about {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 600px;
+}
+
+.about__link {
+    text-decoration: none;
+    color: #000;
+    font-size: 20px;
+}
+
+.sales-block {
+    width: 100%;
+    height: 250px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background: yellow;
+}
+
+.sale {
+    width: 300px;
+    height: 100%;
+    text-decoration: none;
+    color: #000;
+    font-weight: 700;
+    font-size: 50px;
+    
+}
+
+.sale-one {
+    background: url(./img/mangoSale.jpg);
+    background-size: cover; 
+    color: #6e0629;
+}
+
+.sale-two {
+    background: url(./img/pineappleSale.jpg);
+    background-size: cover;
+    color: #ffeaef; 
+}
+
+.sale-three {
+    background: url(./img/dragonFruitSale.jpg);
+    background-size: cover; 
+    color: #ffeaef;
+    font-size: 40px;
+}
+
+.sale-four {
+    background: url(./img/durianSale.jpg);
+    background-size: cover; 
+    color: #6e0629;
+}
