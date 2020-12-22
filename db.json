@@ -55,6 +55,40 @@
       "price": "790грн/кг"
     }
 
+  ],
+
+  "sweet" : [
+    {
+      "url" : "./img/hitPapaya.jpeg",
+      "name": "Папайя",
+      "price": "139 грн/шт."
+    },
+    {
+      "url" : "./img/hitAvocado.png",
+      "name": "Авокадо",
+      "price": "60 грн/шт."
+    },
+    {
+      "url" : "./img/hitKiwi.jpeg",
+      "name": "Ківі Gold",
+      "price": "49 грн/шт."
+    },
+    {
+      "url" : "./img/hitKumquat.jpeg",
+      "name": "Кумкват 5 штук",
+      "price": "40 грн/уп."
+    },
+    {
+      "url" : "./img/hitPassionFruit.jpeg",
+      "name": "Маракуйя",
+      "price": "59 грн/шт."
+    },
+    {
+      "url" : "./img/hitLychee.jpeg",
+      "name": "Лічі",
+      "price": "30 грн/шт."
+    }
+
   ]
 
   

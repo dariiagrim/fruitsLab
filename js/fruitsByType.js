@@ -1,28 +1,16 @@
-function createSalesBlock(text1, text2, text3, text4) {
-    const sales = document.createElement('div')
-    sales.classList.add('sales-block')
-    sales.innerHTML = `<a href="#" class="sale sale-one">${text1}</a><a href="#" class="sale sale-two">${text2}</a>`
-    sales.innerHTML += `<a href="#" class="sale sale-three">${text3}</a><a href=#" class="sale sale-four">${text4}</a>`
-    return sales
-} 
+const sweetLink = document.querySelector('.nav__sweet')
 
-function createFruit(imgUrl, name, price) {
-    const hit = document.createElement('div')
-    hit.classList.add('hit')
-    hit.innerHTML = `<img src="${imgUrl}" alt="${name}" class="hit__img">`
-    hit.innerHTML += `<p class="hit__name">${name}</p>`
-    hit.innerHTML += `<button class="hit__price">${price}</button>`
-    return hit
+sweetLink.onclick = function(e) {
+    e.preventDefault()
+    let href = window.location.href
+    href = href.slice(0, href.length - window.location.hash.length)
+    window.history.replaceState( null , null, href + '/#sweet');
+    renderSweetFruits()
 }
 
-function createFruitContainer() {
-    const hitContainer = document.createElement('div')
-    hitContainer.classList.add('hit__container')
-    return hitContainer
-}
-
-async function renderMain() {
-    const salesReq = await fetch('https://my-json-server.typicode.com/dariiagrim/fruitsLab/sales', {method: "GET", headers: {"Content-Type":"application/json"}})
+async function renderSweetFruits() {
+    main.innerHTML = ''
+    const salesReq = await fetch('https://my-json-server.typicode.com/dariiagrim/fruitsLab/sweet', {method: "GET", headers: {"Content-Type":"application/json"}})
     const data = await salesReq.json()
     main.appendChild(createSalesBlock(data[0].text, data[1].text, data[2].text, data[3].text))
     const hitsReq = await fetch('https://my-json-server.typicode.com/dariiagrim/fruitsLab/hits', {method: "GET", headers: {"Content-Type":"application/json"}})
