@@ -17,10 +17,10 @@
     {
       "url" : "./img/hitPapaya.jpeg",
       "name": "Папайя",
-      "price": "399 грн/шт."
+      "price": "139 грн/шт."
     },
     {
-      "url" : "./img/hitAvocado.jpeg",
+      "url" : "./img/hitAvocado.png",
       "name": "Авокадо",
       "price": "60 грн/шт."
     },
@@ -36,14 +36,25 @@
     },
     {
       "url" : "./img/hitPassionFruit.jpeg",
-      "name": "Папайя",
-      "price": "139 грн/уп."
+      "name": "Маракуйя",
+      "price": "59 грн/шт."
     },
     {
-      "url" : "./img/hitLycee.jpeg",
+      "url" : "./img/hitLychee.jpeg",
       "name": "Лічі",
       "price": "30 грн/шт."
+    },
+    {
+      "url" : "./img/hitCarambola.jpeg",
+      "name": "Карамбола",
+      "price": "79 грн/шт."
+    },
+    {
+      "url" : "./img/hitMangostin.jpeg",
+      "name": "Мангостін",
+      "price": "790грн/кг"
     }
+
   ]
 
   
