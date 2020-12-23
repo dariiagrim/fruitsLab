@@ -174,7 +174,7 @@ body {
     flex-wrap: wrap;
 }
 
-.hit {
+.product {
     height: 300px;
     width: 300px;
     background: #8f0d34;
@@ -184,20 +184,28 @@ body {
     align-items: center;
 }
 
-.hit__img {
+.product__img {
     width: 230px;
     height: 170px;
     background: #ffffff;
 }
 
-.hit__name {
+.product__name {
     font-size: 30px;
     color: #fac8c8;
 }
 
-.hit__price {
+.product__price {
     border: 0;
     border-radius: 0;
     width: 100px;
     height: 40px;
+}
+
+.sweet__container {
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
 }
