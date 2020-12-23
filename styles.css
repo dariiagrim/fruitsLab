@@ -223,3 +223,14 @@ body {
     justify-content: space-around;
     align-items: center;
 }
+
+.neutral {
+    height: 425px;
+    width: 400px;
+    background: #8f0d34;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+

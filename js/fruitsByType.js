@@ -38,6 +38,17 @@ neutralLink.onclick = function(e) {
     renderNeutralFruits()
 }
 
+allLink.onclick = function(e) {
+    e.preventDefault()
+    let href = window.location.href
+    href = href.slice(0, href.length - window.location.hash.length)
+    if (href[href.length - 1] === '/') {
+        href = href.slice(0, href.length - 1)
+    }
+    window.history.replaceState( null , null, href + '/#all');
+    renderAllFruits()
+}
+
 async function renderSweetFruits() {
     main.innerHTML = ''
     const sweetReq = await fetch('https://my-json-server.typicode.com/dariiagrim/fruitsLab/sweet', {method: "GET", headers: {"Content-Type":"application/json"}})
@@ -69,4 +80,15 @@ async function renderNeutralFruits() {
         neutralContainer.appendChild(createProduct(dataNeutral[i].url, dataNeutral[i].name, dataNeutral[i].price, 'neutral'))
     }
     main.appendChild(neutralContainer)
+}
+
+async function renderAllFruits() {
+    main.innerHTML = ''
+    const allReq = await fetch('https://my-json-server.typicode.com/dariiagrim/fruitsLab/all', {method: "GET", headers: {"Content-Type":"application/json"}})
+    const dataAll = await allReq.json()
+    const allContainer = createProductContainer('all__container')
+    for (let i = 0; i < 18; i++) {
+        allContainer.appendChild(createProduct(dataAll[i].url, dataAll[i].name, dataAll[i].price, 'all'))
+    }
+    main.appendChild(allContainer)
 }

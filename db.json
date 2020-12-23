@@ -157,8 +157,101 @@
       "price": "99 грн/шт."
     }
 
+  ],
+  "all" : [
+    {
+      "url" : "../img/hitAvocado.png",
+      "name": "Авокадо",
+      "price": "60 грн/шт."
+    },
+    {
+      "url" : "../img/hitLychee.jpeg",
+      "name": "Лічі",
+      "price": "30 грн/шт."
+    },
+    {
+      "url" : "../img/durian.png",
+      "name": "Дуріан",
+      "price": "1600 грн/шт."
+    },
+    {
+      "url" : "../img/pepino.jpeg",
+      "name": "Пепіно",
+      "price": "189 грн/шт."
+    },
+    {
+      "url" : "../img/kiwano.jpeg",
+      "name": "Ківано",
+      "price": "400грн/кг"
+    },
+    {
+      "url" : "../img/coconut.jpeg",
+      "name": "Кокос з трубочкою",
+      "price": "99 грн/шт."
+    },
+
+    {
+      "url" : "../img/hitKiwi.jpeg",
+      "name": "Ківі Gold",
+      "price": "49 грн/шт."
+    },
+    {
+      "url" : "../img/hitKumquat.jpeg",
+      "name": "Кумкват 5 штук",
+      "price": "40 грн/уп."
+    },
+    {
+      "url" : "../img/hitPassionFruit.jpeg",
+      "name": "Маракуйя",
+      "price": "59 грн/шт."
+    },
+    {
+      "url" : "../img/hitCarambola.jpeg",
+      "name": "Карамбола",
+      "price": "79 грн/шт."
+    },
+    {
+      "url" : "../img/hitMangostin.jpeg",
+      "name": "Мангостін",
+      "price": "790грн/кг"
+    },
+    {
+      "url" : "../img/orange.jpeg",
+      "name": "Апельсин",
+      "price": "70 грн/шт."
+    },
+    {
+      "url" : "../img/hitPapaya.jpeg",
+      "name": "Папайя",
+      "price": "139 грн/шт."
+    },
+    {
+      "url" : "../img/melon.jpeg",
+      "name": "Диня",
+      "price": "179 грн/шт."
+    },
+    {
+      "url" : "../img/pineapple.jpeg",
+      "name": "Ананас",
+      "price": "250 грн/шт."
+    },
+    {
+      "url" : "../img/dragonFruit.jpeg",
+      "name": "Пітахайя",
+      "price": "170 грн/шт."
+    },
+    {
+      "url" : "../img/mandarine.jpeg",
+      "name": "Мандарин",
+      "price": "80 грн/кг."
+    },
+    {
+      "url" : "../img/mango.jpeg",
+      "name": "Манго",
+      "price": "270 грн/шт."
+    }
+
   ]
-  
 
   
 }
