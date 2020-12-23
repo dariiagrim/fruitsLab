@@ -1,5 +1,6 @@
 const sweetLink = document.querySelector('.nav__sweet')
 const sourLink = document.querySelector('.nav__sour')
+const neutralLink = document.querySelector('.nav__neutral')
 const allLink = document.querySelector('.nav__all')
 
 sweetLink.onclick = function(e) {
@@ -25,6 +26,18 @@ sourLink.onclick = function(e) {
     renderSourFruits()
 }
 
+
+neutralLink.onclick = function(e) {
+    e.preventDefault()
+    let href = window.location.href
+    href = href.slice(0, href.length - window.location.hash.length)
+    if (href[href.length - 1] === '/') {
+        href = href.slice(0, href.length - 1)
+    }
+    window.history.replaceState( null , null, href + '/#neutral');
+    renderNeutralFruits()
+}
+
 async function renderSweetFruits() {
     main.innerHTML = ''
     const sweetReq = await fetch('https://my-json-server.typicode.com/dariiagrim/fruitsLab/sweet', {method: "GET", headers: {"Content-Type":"application/json"}})
@@ -47,3 +60,13 @@ async function renderSourFruits() {
     main.appendChild(sourContainer)
 }
 
+async function renderNeutralFruits() {
+    main.innerHTML = ''
+    const neutralReq = await fetch('https://my-json-server.typicode.com/dariiagrim/fruitsLab/neutral', {method: "GET", headers: {"Content-Type":"application/json"}})
+    const dataNeutral = await neutralReq.json()
+    const neutralContainer = createProductContainer('neutral__container')
+    for (let i = 0; i < 6; i++) {
+        neutralContainer.appendChild(createProduct(dataNeutral[i].url, dataNeutral[i].name, dataNeutral[i].price, 'neutral'))
+    }
+    main.appendChild(neutralContainer)
+}
