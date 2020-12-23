@@ -127,17 +127,17 @@
 
   "neutral" : [
     {
-      "url" : "./img/hitAvocado.png",
+      "url" : "../img/hitAvocado.png",
       "name": "Авокадо",
       "price": "60 грн/шт."
     },
     {
-      "url" : "./img/hitLychee.jpeg",
+      "url" : "../img/hitLychee.jpeg",
       "name": "Лічі",
       "price": "30 грн/шт."
     },
     {
-      "url" : "../img/durian.jpeg",
+      "url" : "../img/durian.png",
       "name": "Дуріан",
       "price": "1600 грн/шт."
     },
