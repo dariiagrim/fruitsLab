@@ -14,8 +14,8 @@
     }
   ],
   
-  "all" : {
-    "hits": [
+  "all" : 
+    [
       {
         "url" : "./img/hitPapaya.jpeg",
         "name": "Папайя",
@@ -55,11 +55,8 @@
         "url" : "./img/hitMangostin.jpeg",
         "name": "Мангостін",
         "price": "790грн/кг"
-      }
+      },
   
-    ],
-  
-    "sweet" : [
       {
         "url" : "../img/hitPapaya.jpeg",
         "name": "Папайя",
@@ -89,11 +86,7 @@
         "url" : "../img/mango.jpeg",
         "name": "Манго",
         "price": "270 грн/шт."
-      }
-  
-    ],
-  
-    "sour" : [
+      },
       {
         "url" : "../img/hitKiwi.jpeg",
         "name": "Ківі Gold",
@@ -123,11 +116,8 @@
         "url" : "../img/orange.jpeg",
         "name": "Апельсин",
         "price": "70 грн/шт."
-      }
+      },
   
-    ],
-  
-    "neutral" : [
       {
         "url" : "../img/hitAvocado.png",
         "name": "Авокадо",
@@ -160,7 +150,6 @@
       }
   
     ]
-  }
 
   
 }
