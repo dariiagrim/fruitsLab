@@ -108,12 +108,12 @@
       "price": "59 грн/шт."
     },
     {
-      "url" : "./img/hitCarambola.jpeg",
+      "url" : "../img/hitCarambola.jpeg",
       "name": "Карамбола",
       "price": "79 грн/шт."
     },
     {
-      "url" : "./img/hitMangostin.jpeg",
+      "url" : "../img/hitMangostin.jpeg",
       "name": "Мангостін",
       "price": "790грн/кг"
     },
