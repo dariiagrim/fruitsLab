@@ -166,15 +166,16 @@ body {
     transition-delay: 1s;
 }
 
-.hit__container {
+.product__container {
     height: 100%;
+    width: 1200px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
 }
 
-.product {
+.hit {
     height: 300px;
     width: 300px;
     background: #8f0d34;
@@ -202,10 +203,13 @@ body {
     height: 40px;
 }
 
-.sweet__container {
-    height: 100%;
+
+.sweet {
+    height: 425px;
+    width: 400px;
+    background: #8f0d34;
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    justify-content: space-around;
     align-items: center;
-    flex-wrap: wrap;
 }
