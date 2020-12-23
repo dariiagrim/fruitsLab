@@ -89,6 +89,40 @@
       "price": "30 грн/шт."
     }
 
+  ],
+
+  "sour" : [
+    {
+      "url" : "../img/hitKiwi.jpeg",
+      "name": "Ківі Gold",
+      "price": "49 грн/шт."
+    },
+    {
+      "url" : "../img/hitKumquat.jpeg",
+      "name": "Кумкват 5 штук",
+      "price": "40 грн/уп."
+    },
+    {
+      "url" : "../img/hitPassionFruit.jpeg",
+      "name": "Маракуйя",
+      "price": "59 грн/шт."
+    },
+    {
+      "url" : "./img/hitCarambola.jpeg",
+      "name": "Карамбола",
+      "price": "79 грн/шт."
+    },
+    {
+      "url" : "./img/hitMangostin.jpeg",
+      "name": "Мангостін",
+      "price": "790грн/кг"
+    },
+    {
+      "url" : "../img/orange.jpeg",
+      "name": "Апельсин",
+      "price": "70 грн/шт."
+    }
+
   ]
 
   
