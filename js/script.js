@@ -27,6 +27,7 @@ window.onload = function() {
         renderMain()
     } 
     if (window.location.hash === "#sweet/") {
+        console.log(1)
         renderSweetFruits()
     }
 }

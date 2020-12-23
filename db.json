@@ -15,12 +15,12 @@
   ],
   "hits": [
     {
-      "url" : "./img/hitPapaya.jpeg",
+      "url" : "../img/hitPapaya.jpeg",
       "name": "Папайя",
       "price": "139 грн/шт."
     },
     {
-      "url" : "./img/hitAvocado.png",
+      "url" : "../img/hitAvocado.png",
       "name": "Авокадо",
       "price": "60 грн/шт."
     },
