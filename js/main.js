@@ -35,6 +35,6 @@ logo.onclick = function(e) {
     if (href[href.length - 1] === '/') {
         href = href.slice(0, href.length - 1)
     }
-    window.history.replaceState( null , null, href);
+    window.history.replaceState( null , null, href + '/');
     renderMain()
 }

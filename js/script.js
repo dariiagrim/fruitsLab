@@ -3,15 +3,7 @@ const main = document.querySelector('.main__inner')
 
 
 
-if (window.location.hash === "") {
-    renderMain()
-} 
 
-function checkHash() {
-    if (window.location.hash === "") {
-        renderMain()
-    } 
-}
 
 function createProduct(imgUrl, name, price, className) {
     const product = document.createElement('div')
@@ -27,4 +19,14 @@ function createProductContainer(className) {
     hitContainer.classList.add('product__container')
     hitContainer.classList.add(className)
     return hitContainer
+}
+
+window.onload = function() {
+    console.log(window.location.href)
+    if (window.location.hash === "") {
+        renderMain()
+    } 
+    if (window.location.hash === "#sweet/") {
+        renderSweetFruits()
+    }
 }
