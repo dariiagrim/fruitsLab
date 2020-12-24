@@ -5,47 +5,23 @@ const allLink = document.querySelector('.nav__all')
 
 sweetLink.onclick = function(e) {
     e.preventDefault()
-    let href = window.location.href
-    href = href.slice(0, href.length - window.location.hash.length)
-    if (href[href.length - 1] === '/') {
-        href = href.slice(0, href.length - 1)
-    }
-    window.history.replaceState( null , null, href + '/#sweet');
     renderSweetFruits()
 }
 
 
 sourLink.onclick = function(e) {
     e.preventDefault()
-    let href = window.location.href
-    href = href.slice(0, href.length - window.location.hash.length)
-    if (href[href.length - 1] === '/') {
-        href = href.slice(0, href.length - 1)
-    }
-    window.history.replaceState( null , null, href + '/#sour');
     renderSourFruits()
 }
 
 
 neutralLink.onclick = function(e) {
     e.preventDefault()
-    let href = window.location.href
-    href = href.slice(0, href.length - window.location.hash.length)
-    if (href[href.length - 1] === '/') {
-        href = href.slice(0, href.length - 1)
-    }
-    window.history.replaceState( null , null, href + '/#neutral');
     renderNeutralFruits()
 }
 
 allLink.onclick = function(e) {
     e.preventDefault()
-    let href = window.location.href
-    href = href.slice(0, href.length - window.location.hash.length)
-    if (href[href.length - 1] === '/') {
-        href = href.slice(0, href.length - 1)
-    }
-    window.history.replaceState( null , null, href + '/#all');
     renderAllFruits()
 }
 
@@ -100,6 +76,7 @@ async function renderAllFruits() {
     const dataAll = await allReq.json()
     const allContainer = createProductContainer('all__container')
     for (let i = 8; i < 26; i++) {
+        console.log(dataAll[i].url)
         allContainer.appendChild(createProduct(dataAll[i].url, dataAll[i].name, dataAll[i].price, 'all', i))
     }
     main.appendChild(allContainer)

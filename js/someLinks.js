@@ -1,11 +1,10 @@
 window.addEventListener('click', function(event) {
-    if (event.target.classList.contains('sale')) {
-        console.log(5)
+    if (event.target.classList.contains('sale') || event.target.classList.contains('nav__sale')) {
         renderSalePage()
     }
     if (event.target.classList.contains('buy-sale')) {
         window.location.href = window.location.href.slice(0, window.location.href.length - 1)
-        renderAll()
+        renderMain()
     }
 })
 

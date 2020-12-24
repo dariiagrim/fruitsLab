@@ -316,3 +316,37 @@ body {
     border: 0;
     background: #ffcaca;
 }
+
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    font-size: 50px;
+    width: 1000px;
+    margin: auto;
+}
+
+.cart {
+    font-size: 50px;
+    font-weight: bold;
+    text-decoration: none;
+    text-align: center;
+    color: rgb(199, 42, 238);
+}
+
+.form {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+    height: 500px;
+}
+
+input {
+    border: 0;
+    width: 300px;
+    height: 60px;
+    background: #f38181;
+    font-size: 18px;
+    color: #000;
+    padding-left: 20px;
+}

@@ -23,13 +23,3 @@ function createProductContainer(className) {
     return hitContainer
 }
 
-window.onload = function() {
-    console.log(window.location.href)
-    if (window.location.hash === "") {
-        renderMain()
-    } 
-    if (window.location.hash === "#sweet/") {
-        console.log(1)
-        renderSweetFruits()
-    }
-}

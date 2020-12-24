@@ -1,5 +1,7 @@
 const logo = document.querySelector('.logo')
-
+window.onload = function() {
+    renderMain()
+}
 
 function createSalesBlock(text1, text2, text3, text4) {
     const sales = document.createElement('div')
@@ -8,10 +10,6 @@ function createSalesBlock(text1, text2, text3, text4) {
     sales.innerHTML += `<a href="#" class="sale sale-three">${text3}</a><a href="#" class="sale sale-four">${text4}</a>`
     return sales
 } 
-
-
-
-
 
 async function renderMain() {
     main.innerHTML = ""
@@ -32,12 +30,5 @@ async function renderMain() {
 
 logo.onclick = function(e) {
     console.log('clicked.all')
-    e.preventDefault()
-    let href = window.location.href
-    href = href.slice(0, href.length - window.location.hash.length)
-    if (href[href.length - 1] === '/') {
-        href = href.slice(0, href.length - 1)
-    }
-    window.history.replaceState( null , null, href);
     renderMain()
 }
