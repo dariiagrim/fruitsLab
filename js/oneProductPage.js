@@ -1,4 +1,24 @@
+class Product {
+    constructor(id) {
+        this.name = 'None'
+        this.price = '0'
+        this.id = id
+        this.priceInt = 0
+        this.amountInCart = 1
+    }
+
+    setPriceInt() {
+        this.priceInt = parseInt(this.price)
+    }
+}
+
+let allProducts = []
+for (let i = 0; i < 25; i++) {
+    allProducts.push(new Product(i))
+}
+console.log(allProducts)
 let cart = []
+let cartLength = 0
 const cartIcon = document.querySelector('.cart')
 
 
@@ -10,9 +30,19 @@ window.addEventListener('click', function(event) {
         renderOneProductInfo(event.target.parentNode.id)
     }
     if (event.target.classList.contains('add-to-cart')) {
+        cartLength += 1
         let id = event.target.id
-        cart.push(id)
-        cartIcon.innerHTML = `${cart.length}`
+        is_duplicate = false
+        for (let i = 0; i < cart.length; i++) {
+            if (cart[i].id  == id) {
+                is_duplicate = true
+                cart[i].amountInCart += 1
+            }
+        }
+        if (!is_duplicate) {
+            cart.push(allProducts[id])
+        }
+        cartIcon.innerHTML = `${cartLength}`
     }
 })
 
@@ -22,6 +52,11 @@ async function renderOneProductInfo(id) {
     const allReq = await fetch('https://my-json-server.typicode.com/dariiagrim/fruitsLab/all', {method: "GET", headers: {"Content-Type":"application/json"}})
     const dataAll = await allReq.json()
     const pageProduct = createPageForOneProduct(dataAll[id].url, dataAll[id].name, dataAll[id].price, dataAll[id].description, id)
+    if (allProducts[id].name === "None") {
+        allProducts[id].name = dataAll[id].name
+        allProducts[id].price = dataAll[id].price
+        allProducts[id].setPriceInt()
+    }
     main.appendChild(pageProduct)
 }
 

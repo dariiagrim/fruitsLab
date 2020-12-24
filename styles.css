@@ -325,6 +325,17 @@ table, th, td {
     margin: auto;
 }
 
+.clear-button {
+    width: 1000px;
+    margin-left: 100px;
+    border: 0;
+    background: #8f0d34;
+    height: 60px;
+    font-size: 50px;
+    color: #000000;
+    text-align: center;
+}
+
 .cart {
     font-size: 50px;
     font-weight: bold;

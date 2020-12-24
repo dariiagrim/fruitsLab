@@ -8,6 +8,9 @@ window.addEventListener('click', function(event) {
     if (event.target.classList.contains('submit')) {
         checkForm()
     }
+    if (event.target.classList.contains('clear-button')) {
+        clearCart()
+    }
 })
 
 function createCartTable() {
@@ -16,28 +19,41 @@ function createCartTable() {
     return cartTable
 }
 
-function createRow(name, price) {
+function createRow(name, price, amount) {
     const row = document.createElement('tr')
     row.classList.add('row-table')
-    row.innerHTML = `<th class="cart-name">${name}</th><th class="cart-price">${price}</th>`
+    row.innerHTML = `<th class="cart-name">${name}</th><th class="cart-amount">${amount}</th><th class="cart-price">${price}</th>`
     return row
 }
 
-async function renderCart() {
+function renderCart() {
     main.innerHTML = ''
     if (main.parentNode.parentNode.classList.contains('one-page-main')) {
         main.parentNode.parentNode.classList.remove('one-page-main')
     }
-    const allReq = await fetch('https://my-json-server.typicode.com/dariiagrim/fruitsLab/all', {method: "GET", headers: {"Content-Type":"application/json"}})
-    const data = await allReq.json()
     const table = createCartTable()
     for (let i = 0; i < cart.length; i++) {
-        table.appendChild(createRow(data[cart[i]].name, data[cart[i]].price))
+        console.log(cart[i].name, cart[i].amountInCart, cart[i].priceInt*cart[i].amountInCart)
+        table.appendChild(createRow(cart[i].name, cart[i].amountInCart, cart[i].priceInt*cart[i].amountInCart))
     }
     main.appendChild(table)
+    main.appendChild(createClearCartButton()) 
     
 }
 
+function createClearCartButton() {
+    const clearButton = document.createElement('button')
+    clearButton.classList.add('clear-button')
+    clearButton.innerHTML = 'Очистити кошик'
+    return clearButton
+}
+
+function clearCart() {
+    cart = []
+    cartLength = 0
+    cartIcon.innerHTML = '0'
+    renderCart()
+}
 
 function renderOrder() {
     main.innerHTML = ''

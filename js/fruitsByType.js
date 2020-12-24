@@ -76,7 +76,6 @@ async function renderAllFruits() {
     const dataAll = await allReq.json()
     const allContainer = createProductContainer('all__container')
     for (let i = 8; i < 26; i++) {
-        console.log(dataAll[i].url)
         allContainer.appendChild(createProduct(dataAll[i].url, dataAll[i].name, dataAll[i].price, 'all', i))
     }
     main.appendChild(allContainer)
