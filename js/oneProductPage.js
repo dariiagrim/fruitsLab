@@ -49,6 +49,7 @@ window.addEventListener('click', function(event) {
 async function renderOneProductInfo(id) {
     main.innerHTML = ''
     main.parentNode.parentNode.classList.add('one-page-main')
+    main.appendChild(loader)
     const allReq = await fetch('https://my-json-server.typicode.com/dariiagrim/fruitsLab/all', {method: "GET", headers: {"Content-Type":"application/json"}})
     const dataAll = await allReq.json()
     const pageProduct = createPageForOneProduct(dataAll[id].url, dataAll[id].name, dataAll[id].price, dataAll[id].description, id)
@@ -57,6 +58,7 @@ async function renderOneProductInfo(id) {
         allProducts[id].price = dataAll[id].price
         allProducts[id].setPriceInt()
     }
+    main.removeChild(loader)
     main.appendChild(pageProduct)
 }
 

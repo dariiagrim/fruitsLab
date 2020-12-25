@@ -1,4 +1,6 @@
 const logo = document.querySelector('.logo')
+const loader = createLoader()
+const footerLogo = document.querySelector('.footer__logo')
 window.onload = function() {
     renderMain()
 }
@@ -16,6 +18,7 @@ async function renderMain() {
     if (main.parentNode.parentNode.classList.contains('one-page-main')) {
         main.parentNode.parentNode.classList.remove('one-page-main')
     }
+    main.appendChild(loader)
     const salesReq = await fetch('https://my-json-server.typicode.com/dariiagrim/fruitsLab/sales', {method: "GET", headers: {"Content-Type":"application/json"}})
     const data = await salesReq.json()
     main.appendChild(createSalesBlock(data[0].text, data[1].text, data[2].text, data[3].text))
@@ -25,10 +28,20 @@ async function renderMain() {
     for (let i = 0; i < 8; i++) {
         hitContainer.appendChild(createProduct(dataHits[i].url, dataHits[i].name, dataHits[i].price, 'hit', i))
     }
+    main.removeChild(loader)
     main.appendChild(hitContainer)
 }
 
-logo.onclick = function(e) {
-    console.log('clicked.all')
+logo.onclick = function() {
     renderMain()
+}
+
+footerLogo.onclick = function() {
+    renderMain()
+}
+
+function createLoader() {
+    const loader = document.createElement('div')
+    loader.classList.add('loader')
+    return loader
 }

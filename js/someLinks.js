@@ -3,7 +3,6 @@ window.addEventListener('click', function(event) {
         renderSalePage()
     }
     if (event.target.classList.contains('buy-sale')) {
-        window.location.href = window.location.href.slice(0, window.location.href.length - 1)
         renderMain()
     }
 })
@@ -13,8 +12,10 @@ async function renderSalePage() {
     if (main.parentNode.parentNode.classList.contains('one-page-main')) {
         main.parentNode.parentNode.classList.remove('one-page-main')
     }
+    main.appendChild(loader)
     const salesReq = await fetch('https://my-json-server.typicode.com/dariiagrim/fruitsLab/sales', {method: "GET", headers: {"Content-Type":"application/json"}})
     const data = await salesReq.json()
+    main.removeChild(loader)
     for (let i = 0; i < 4; i++) {
         main.appendChild(createBigSale(data[i].text))
     }

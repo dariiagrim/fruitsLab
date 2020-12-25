@@ -31,11 +31,13 @@ function renderCart() {
     if (main.parentNode.parentNode.classList.contains('one-page-main')) {
         main.parentNode.parentNode.classList.remove('one-page-main')
     }
+    main.appendChild(loader)
     const table = createCartTable()
     for (let i = 0; i < cart.length; i++) {
         console.log(cart[i].name, cart[i].amountInCart, cart[i].priceInt*cart[i].amountInCart)
         table.appendChild(createRow(cart[i].name, cart[i].amountInCart, cart[i].priceInt*cart[i].amountInCart))
     }
+    main.removeChild(loader)
     main.appendChild(table)
     main.appendChild(createClearCartButton()) 
     
@@ -66,54 +68,59 @@ function renderOrder() {
 function createForm() {
     const form = document.createElement('div')
     form.classList.add('form')
-    form.innerHTML = `<input type="text" class="first-name" placeholder="Ім'я"><input type="text" class="last-name" placeholder="Прізвище"><input type="text" class="address" placeholder="Адреса">`
-    form.innerHTML += `<input type="text" class="time" placeholder="Час доставки (> 1 год від цього моменту)"><input type="text" class="pay" placeholder="Карта/готівка">`
-    form.innerHTML += `<input type="text" class="mobile" placeholder="Мобільний телефон"><input type="text" class="email" placeholder="Електронна пошта"><button class="submit">Підтвердити замовлення</button>`
+    form.innerHTML = `<input type="text" class="first-name input-form" placeholder="Ім'я"><input type="text" class="last-name input-form" placeholder="Прізвище"><input type="text" class="address input-form" placeholder="Адреса">`
+    form.innerHTML += `<input type="text" class="time input-form" placeholder="Час доставки (> 1 год від цього моменту)"><input type="text" class="pay input-form" placeholder="Карта/готівка">`
+    form.innerHTML += `<input type="text" class="mobile input-form" placeholder="Мобільний телефон"><input type="text" class="email input-form" placeholder="Електронна пошта"><button class="submit">Підтвердити замовлення</button>`
     return form
 }
 
 function checkForm() {
-    console.log(15)
     const email = document.querySelector('.email')
     const mobilePhone = document.querySelector('.mobile')
     const emailText = email.value
     const mobileText = mobilePhone.value
-    if (!emailValidation(emailText)) {
-        email.value = 'Некоректно введені дані.'
+    const allInputs = document.querySelectorAll('.input-form')
+    console.log(allInputs)
+    let foundEmpty = false
+    for (let i = 0; i < allInputs.length; i++) {
+        if (inputEmpty(allInputs[i])) {
+            allInputs[i].value = "Поле не може бути пустим"
+            foundEmpty = true
+        }
+       
+    }
+    if (foundEmpty) {
         return
     }
-    if (!mobileValidation(mobileText)) {
-        mobilePhone.value = 'Некоректно введені дані.'
-        return
+    if (!mobileValidation(mobileText) || !emailValidation(emailText)) {
+        if (!mobileValidation(mobileText)) {
+            mobilePhone.value = 'Некоректно введені дані.'
+        }
+        if (!emailValidation(emailText)) {
+            email.value = 'Некоректно введені дані.'
+        }
     }
-    
 }
 
 function emailValidation(email) {
-    let isValid = false
-    for (let i = 0; i < email.length; i++) {
-        if (email[i] === '@' && !isValid) {
-            isValid = true
-        }
+    const checkMatching = email.match(/[a-z]+@{1}[a-z]+\.{1}[a-z]+/)
+    if (checkMatching === null) {
+        return false
     }
-    return isValid
+    return checkMatching[0] === email
 }
 
 function mobileValidation(mobile) {
-    let isValid = true
-    if (mobile.length != 10 || mobile[0] != '0') {
+    const checkMatching = mobile.match(/0\d{9}/)
+    if (checkMatching === null) {
         return false
     }
-    const charCodeZero = "0".charCodeAt(0);
-    console.log(charCodeZero)
-    const charCodeNine = "9".charCodeAt(0);
-    for (let i = 0; i < mobile.length; i++) {
-        if (mobile[i].charCodeAt(0) <= charCodeZero || mobile[i].charCodeAt(0) >= charCodeNine) {
-            isValid = false
-        }
+    return checkMatching[0] === mobile
+} 
+
+
+function inputEmpty(input) {
+    if (input.value === '') {
+        return true
     }
-    return isValid
 }
-
-
-

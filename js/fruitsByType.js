@@ -30,12 +30,14 @@ async function renderSweetFruits() {
     if (main.parentNode.parentNode.classList.contains('one-page-main')) {
         main.parentNode.parentNode.classList.remove('one-page-main')
     }
+    main.appendChild(loader)
     const sweetReq = await fetch('https://my-json-server.typicode.com/dariiagrim/fruitsLab/all', {method: "GET", headers: {"Content-Type":"application/json"}})
     const dataSweet = await sweetReq.json()
     const sweetContainer = createProductContainer('sweet__container')
     for (let i = 8; i < 14; i++) {
         sweetContainer.appendChild(createProduct(dataSweet[i].url, dataSweet[i].name, dataSweet[i].price, 'sweet', i))
     }
+    main.removeChild(loader)
     main.appendChild(sweetContainer)
 }
 
@@ -44,12 +46,14 @@ async function renderSourFruits() {
     if (main.parentNode.parentNode.classList.contains('one-page-main')) {
         main.parentNode.parentNode.classList.remove('one-page-main')
     }
+    main.appendChild(loader)
     const sourReq = await fetch('https://my-json-server.typicode.com/dariiagrim/fruitsLab/all', {method: "GET", headers: {"Content-Type":"application/json"}})
     const dataSour = await sourReq.json()
     const sourContainer = createProductContainer('sour__container')
     for (let i = 14; i < 20; i++) {
         sourContainer.appendChild(createProduct(dataSour[i].url, dataSour[i].name, dataSour[i].price, 'sour', i))
     }
+    main.removeChild(loader)
     main.appendChild(sourContainer)
 }
 
@@ -58,12 +62,14 @@ async function renderNeutralFruits() {
     if (main.parentNode.parentNode.classList.contains('one-page-main')) {
         main.parentNode.parentNode.classList.remove('one-page-main')
     }
+    main.appendChild(loader)
     const neutralReq = await fetch('https://my-json-server.typicode.com/dariiagrim/fruitsLab/all', {method: "GET", headers: {"Content-Type":"application/json"}})
     const dataNeutral = await neutralReq.json()
     const neutralContainer = createProductContainer('neutral__container')
     for (let i = 20; i < 26; i++) {
         neutralContainer.appendChild(createProduct(dataNeutral[i].url, dataNeutral[i].name, dataNeutral[i].price, 'neutral', i))
     }
+    main.removeChild(loader)
     main.appendChild(neutralContainer)
 }
 
@@ -72,11 +78,13 @@ async function renderAllFruits() {
     if (main.parentNode.parentNode.classList.contains('one-page-main')) {
         main.parentNode.parentNode.classList.remove('one-page-main')
     }
+    main.appendChild(loader)
     const allReq = await fetch('https://my-json-server.typicode.com/dariiagrim/fruitsLab/all', {method: "GET", headers: {"Content-Type":"application/json"}})
     const dataAll = await allReq.json()
     const allContainer = createProductContainer('all__container')
     for (let i = 8; i < 26; i++) {
         allContainer.appendChild(createProduct(dataAll[i].url, dataAll[i].name, dataAll[i].price, 'all', i))
     }
+    main.removeChild(loader)
     main.appendChild(allContainer)
 }
