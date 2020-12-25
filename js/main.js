@@ -3,6 +3,27 @@ const loader = createLoader()
 const footerLogo = document.querySelector('.footer__logo')
 window.onload = function() {
     renderMain()
+    let storage = localStorage.getItem('cart')
+    if (storage === null) {
+        cart = []
+    } else {
+        cart = JSON.parse(storage)
+        for (let i = 0; i < cart.length; i++) {
+            cart[i].__proto__ = Product.prototype
+        }
+    }
+    storage = localStorage.getItem('cart-length')
+    if (storage === null) {
+        cartLength = 0
+    } else {
+        cartLength = parseInt(JSON.parse(storage))
+    }
+    cartIcon.innerHTML = `${cartLength}`
+}
+
+window.onunload = function() {
+    localStorage.setItem('cart', JSON.stringify(cart)) 
+    localStorage.setItem('cart-length', JSON.stringify(cartLength)) 
 }
 
 function createSalesBlock(text1, text2, text3, text4) {
