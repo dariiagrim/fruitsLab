@@ -83,8 +83,27 @@ async function renderAllFruits() {
     const dataAll = await allReq.json()
     const allContainer = createProductContainer('all__container')
     for (let i = 8; i < 26; i++) {
-        allContainer.appendChild(createProduct(dataAll[i].url, dataAll[i].name, dataAll[i].price, 'all', i))
+        let product = createProduct(dataAll[i].url, dataAll[i].name, dataAll[i].price, 'all', i) 
+        product.appendChild(createFruitTypeText(i))
+        allContainer.appendChild(product)
     }
     main.removeChild(loader)
     main.appendChild(allContainer)
+}
+
+function getFruitType(index) {
+    if (index >= 8 && index < 14) {
+        return 'солодкий'
+    }
+    if (index >= 14 && index < 20) {
+        return 'кислий'
+    }
+    return 'нейтральний'
+}
+
+function createFruitTypeText(index) {
+    const typeText = document.createElement('p')
+    typeText.classList.add('type-text')
+    typeText.innerHTML = getFruitType(index)
+    return typeText
 }

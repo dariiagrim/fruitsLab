@@ -13,7 +13,7 @@ class Product {
 }
 
 let allProducts = []
-for (let i = 0; i < 25; i++) {
+for (let i = 0; i < 26; i++) {
     allProducts.push(new Product(i))
 }
 console.log(allProducts)
@@ -52,6 +52,7 @@ async function renderOneProductInfo(id) {
     main.appendChild(loader)
     const allReq = await fetch('https://my-json-server.typicode.com/dariiagrim/fruitsLab/all', {method: "GET", headers: {"Content-Type":"application/json"}})
     const dataAll = await allReq.json()
+    console.log(id, dataAll[id].url, dataAll[id].name, dataAll[id].price, dataAll[id].description, id)
     const pageProduct = createPageForOneProduct(dataAll[id].url, dataAll[id].name, dataAll[id].price, dataAll[id].description, id)
     if (allProducts[id].name === "None") {
         allProducts[id].name = dataAll[id].name

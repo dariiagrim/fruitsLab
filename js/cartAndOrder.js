@@ -68,9 +68,10 @@ function renderOrder() {
 function createForm() {
     const form = document.createElement('div')
     form.classList.add('form')
-    form.innerHTML = `<input type="text" class="first-name input-form" placeholder="Ім'я"><input type="text" class="last-name input-form" placeholder="Прізвище"><input type="text" class="address input-form" placeholder="Адреса">`
-    form.innerHTML += `<input type="text" class="time input-form" placeholder="Час доставки (> 1 год від цього моменту)"><input type="text" class="pay input-form" placeholder="Карта/готівка">`
-    form.innerHTML += `<input type="text" class="mobile input-form" placeholder="Мобільний телефон"><input type="text" class="email input-form" placeholder="Електронна пошта"><button class="submit">Підтвердити замовлення</button>`
+    form.innerHTML = `<input type="text" class="first-name input-form" placeholder="Ім'я*"><input type="text" class="last-name input-form" placeholder="Прізвище*"><input type="text" class="address input-form" placeholder="Адреса*">`
+    form.innerHTML += '<input type="text" class="time input-form" placeholder="Час доставки (> 1 год від цього моменту)*"><input type="text" class="pay input-form" placeholder="Карта/готівка*">'
+    form.innerHTML += '<input type="text" class="mobile input-form" placeholder="Мобільний телефон*"><input type="text" class="email input-form" placeholder="Електронна пошта*"><input type="text" class="comment" placeholder="Коментарій до замовлення">'
+    form.innerHTML += '<button class="submit">Підтвердити замовлення</button>'
     return form
 }
 

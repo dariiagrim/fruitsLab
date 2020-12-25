@@ -16,6 +16,22 @@ body {
     border-radius: 50%;
     background-image: url(./img/logo.jpg);
     background-size: cover;
+    transition: 2s;
+}
+
+.logo:hover {
+    background-image: url(./img/logo2.jpg);
+    width: 200px;
+    background-size: cover;
+}
+
+.nav__link {
+    transition: 0.5s;
+}
+
+.nav__link:hover {
+    font-size: 30px;
+    color: #6e0629;
 }
 
 .container {
@@ -115,6 +131,12 @@ body {
     text-decoration: none;
     color: #000;
     font-size: 20px;
+    transition: 0.5s;
+}
+
+.about__link:hover {
+    font-size: 30px;
+    color: #6e0629;
 }
 
 .sales-block {
@@ -163,7 +185,7 @@ body {
 
 .sale:hover {
     background: #2a2029;
-    transition-delay: 1s;
+    transition-delay: 1s;   
 }
 
 .product__container {
@@ -189,6 +211,13 @@ body {
     width: 230px;
     height: 170px;
     background: #ffffff;
+    transition: 1s;
+}
+
+.product__img:hover {
+    border-radius: 50%;
+    width: 250px;
+    height: 250px;
 }
 
 .product__name {
@@ -201,8 +230,13 @@ body {
     border-radius: 0;
     width: 100px;
     height: 40px;
+    transition: 1s;
 }
 
+.product__price:hover {
+    width: 200px;
+    background: #fac8c8;
+}
 
 .sweet {
     height: 425px;
@@ -292,6 +326,12 @@ body {
     font-size: 30px;
     border: 0;
     height: 40px;
+    transition: 1s;
+}
+
+.add-to-cart:hover {
+    height: 60px;
+    font-size: 40px;
 }
 
 .big-sale-block {
@@ -379,4 +419,19 @@ input {
     z-index: 100;
     margin: auto;
     margin-top: 420px;
+}
+
+.about__text {
+    width: 1000px;
+    margin: auto;
+    font-size: 50px;
+    background-color: #fac8c8;
+}
+
+.type-text {
+    position: relative;
+    top: -255px;
+    font-size: 20px;
+    font-style: italic;
+    color: #f38181;
 }
