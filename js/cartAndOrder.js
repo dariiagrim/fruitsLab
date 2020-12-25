@@ -70,18 +70,14 @@ function createForm() {
     form.classList.add('form')
     form.innerHTML = `<input type="text" class="first-name input-form" placeholder="Ім'я*"><input type="text" class="last-name input-form" placeholder="Прізвище*"><input type="text" class="address input-form" placeholder="Адреса*">`
     form.innerHTML += '<input type="text" class="time input-form" placeholder="Час доставки (> 1 год від цього моменту)*"><input type="text" class="pay input-form" placeholder="Карта/готівка*">'
-    form.innerHTML += '<input type="text" class="mobile input-form" placeholder="Мобільний телефон*"><input type="text" class="email input-form" placeholder="Електронна пошта*"><input type="text" class="comment" placeholder="Коментарій до замовлення">'
+    form.innerHTML += '<input type="text" class="mobile input-form" placeholder="Мобільний телефон*"><input type="text" class="email input-form" placeholder="Електронна пошта*"><input type="text" class="comment" placeholder="Коментар до замовлення">'
     form.innerHTML += '<button class="submit">Підтвердити замовлення</button>'
     return form
 }
 
-function checkForm() {
-    const email = document.querySelector('.email')
-    const mobilePhone = document.querySelector('.mobile')
-    const emailText = email.value
-    const mobileText = mobilePhone.value
+async function checkForm() {
+    const comment = document.querySelector('.comment')
     const allInputs = document.querySelectorAll('.input-form')
-    console.log(allInputs)
     let foundEmpty = false
     for (let i = 0; i < allInputs.length; i++) {
         if (inputEmpty(allInputs[i])) {
@@ -93,14 +89,27 @@ function checkForm() {
     if (foundEmpty) {
         return
     }
-    if (!mobileValidation(mobileText) || !emailValidation(emailText)) {
-        if (!mobileValidation(mobileText)) {
-            mobilePhone.value = 'Некоректно введені дані.'
+    if (!mobileValidation(allInputs[5].value) || !emailValidation(allInputs[6].value)) {
+        if (!mobileValidation(allInputs[5].value)) {
+            allInputs[5].value = 'Некоректно введені дані.'
         }
-        if (!emailValidation(emailText)) {
-            email.value = 'Некоректно введені дані.'
+        if (!emailValidation(allInputs[6].value)) {
+            allInputs[6].value = 'Некоректно введені дані.'
         }
+        return
     }
+    const orderDetails = {
+        firstName: allInputs[0].value,
+        lastName: allInputs[1].value,
+        address: allInputs[2].value,
+        orderTime: allInputs[3].value,
+        payment: allInputs[4].value,
+        mobile: allInputs[5].value,
+        email: allInputs[6].value,
+        comment: comment.value
+
+    }
+    sendDataToServer(orderDetails)
 }
 
 function emailValidation(email) {
@@ -124,4 +133,8 @@ function inputEmpty(input) {
     if (input.value === '') {
         return true
     }
+}
+
+async function sendDataToServer(orderDetails) {
+    const response = await fetch('https://my-json-server.typicode.com/dariiagrim/fruitsLab/orders', {method: "POST", headers: {"Content-Type":"application/json"}, body: JSON.stringify(orderDetails)})
 }
