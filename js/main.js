@@ -1,8 +1,29 @@
 const logo = document.querySelector('.logo')
 const loader = createLoader()
 const footerLogo = document.querySelector('.footer__logo')
+
 window.onload = function() {
-    renderMain()
+    if (window.location.hash === '#/about/contacts') {
+        renderAboutContacts()
+    } else if (window.location.hash === '#/about/company') {
+        renderAboutCompany()
+    } else if (window.location.hash === '#/all') {
+        renderAllFruits()
+    } else if (window.location.hash === '#/sweet') {
+        renderSweetFruits()
+    } else if (window.location.hash === '#/sour') {
+        renderSourFruits()
+    } else if (window.location.hash === '#/neutral') {
+        renderNeutralFruits()
+    } else if (window.location.hash === '#/cart') {
+        renderCart()
+    } else if (window.location.hash === '#/order') {
+        renderOrder()
+    }else if (window.location.hash === '#/sale') {
+            renderSale()
+    } else {
+        renderMain()
+    }
     let storage = localStorage.getItem('cart')
     if (storage === null) {
         cart = []
@@ -69,3 +90,4 @@ function createLoader() {
     loader.classList.add('loader')
     return loader
 }
+

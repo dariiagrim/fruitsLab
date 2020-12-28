@@ -4,7 +4,6 @@ const main = document.querySelector('.main__inner')
 
 
 
-
 function createProduct(imgUrl, name, price, className, id) {
     const product = document.createElement('div')
     product.classList.add(className)

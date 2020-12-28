@@ -111,12 +111,16 @@ async function checkForm() {
         orderTime: allInputs[3].value,
         payment: allInputs[4].value,
         mobile: allInputs[5].value,
-        email: getEmailJsonOK(email),
+        email: allInputs[6].value,
         comment: comment.value,
         sum: countSum()
 
     }
     sendDataToServer(orderDetails)
+    for (let i = 0; i < allInputs.length; i++) {
+        allInputs[i].value = ''
+    }
+    comment.value = ''
 }
 
 function emailValidation(email) {
@@ -157,15 +161,4 @@ function countSum() {
         sum += cart[i].priceInt * cart[i].amountInCart
     }
     return sum
-}
-function getEmailJsonOK(email) {
-    let emailCopy = ""
-    for (let i = 0; i < email.length; i++) {
-        if (email[i] === "@") {
-            emailCopy += '1'
-        } else {
-            emailCopy += email[i]
-        }
-    }
-    return emailCopy
 }
