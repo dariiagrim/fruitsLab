@@ -111,7 +111,7 @@ async function checkForm() {
         orderTime: allInputs[3].value,
         payment: allInputs[4].value,
         mobile: allInputs[5].value,
-        email: allInputs[6].value,
+        email: getEmailJsonOK(email),
         comment: comment.value,
         sum: countSum()
 
@@ -147,6 +147,8 @@ async function sendDataToServer(orderDetails) {
     const data = await response.json()
     console.log(data)
     cart = []
+    cartLength = 0
+    cartIcon.innerHTML = '0'
 }
 
 function countSum() {
@@ -156,4 +158,14 @@ function countSum() {
     }
     return sum
 }
-
+function getEmailJsonOK(email) {
+    let emailCopy = ""
+    for (let i = 0; i < email.length; i++) {
+        if (email[i] === "@") {
+            emailCopy += '1'
+        } else {
+            emailCopy += email[i]
+        }
+    }
+    return emailCopy
+}
