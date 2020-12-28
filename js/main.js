@@ -39,6 +39,9 @@ async function renderMain() {
     if (main.parentNode.parentNode.classList.contains('one-page-main')) {
         main.parentNode.parentNode.classList.remove('one-page-main')
     }
+    if (header.classList.contains('one-page-header')) {
+        header.classList.remove('one-page-header')
+    }
     main.appendChild(loader)
     const salesReq = await fetch('https://my-json-server.typicode.com/dariiagrim/fruitsLab/sales', {method: "GET", headers: {"Content-Type":"application/json"}})
     const data = await salesReq.json()

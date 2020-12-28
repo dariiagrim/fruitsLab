@@ -435,3 +435,7 @@ input {
     font-style: italic;
     color: #f38181;
 }
+
+.one-page-header {
+    margin-top: 100px;
+}

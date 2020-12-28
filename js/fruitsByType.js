@@ -30,6 +30,9 @@ async function renderSweetFruits() {
     if (main.parentNode.parentNode.classList.contains('one-page-main')) {
         main.parentNode.parentNode.classList.remove('one-page-main')
     }
+    if (header.classList.contains('one-page-header')) {
+        header.classList.remove('one-page-header')
+    }
     main.appendChild(loader)
     const sweetReq = await fetch('https://my-json-server.typicode.com/dariiagrim/fruitsLab/all', {method: "GET", headers: {"Content-Type":"application/json"}})
     const dataSweet = await sweetReq.json()
@@ -45,6 +48,9 @@ async function renderSourFruits() {
     main.innerHTML = ''
     if (main.parentNode.parentNode.classList.contains('one-page-main')) {
         main.parentNode.parentNode.classList.remove('one-page-main')
+    }
+    if (header.classList.contains('one-page-header')) {
+        header.classList.remove('one-page-header')
     }
     main.appendChild(loader)
     const sourReq = await fetch('https://my-json-server.typicode.com/dariiagrim/fruitsLab/all', {method: "GET", headers: {"Content-Type":"application/json"}})
@@ -62,6 +68,9 @@ async function renderNeutralFruits() {
     if (main.parentNode.parentNode.classList.contains('one-page-main')) {
         main.parentNode.parentNode.classList.remove('one-page-main')
     }
+    if (header.classList.contains('one-page-header')) {
+        header.classList.remove('one-page-header')
+    }
     main.appendChild(loader)
     const neutralReq = await fetch('https://my-json-server.typicode.com/dariiagrim/fruitsLab/all', {method: "GET", headers: {"Content-Type":"application/json"}})
     const dataNeutral = await neutralReq.json()
@@ -77,6 +86,9 @@ async function renderAllFruits() {
     main.innerHTML = ''
     if (main.parentNode.parentNode.classList.contains('one-page-main')) {
         main.parentNode.parentNode.classList.remove('one-page-main')
+    }
+    if (header.classList.contains('one-page-header')) {
+        header.classList.remove('one-page-header')
     }
     main.appendChild(loader)
     const allReq = await fetch('https://my-json-server.typicode.com/dariiagrim/fruitsLab/all', {method: "GET", headers: {"Content-Type":"application/json"}})

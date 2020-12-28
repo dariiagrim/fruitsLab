@@ -177,7 +177,31 @@
     ],
 
     "orders" : [
-      
+      {
+        "address": "Київ, вулиця Борщагівська 13",
+​        "comment": "Подарункова упаковка.",
+​        "email": "ivanivanov@gmail.com",
+        "firstName": "Іван",
+​        "id": "1",
+​        "lastName": "Іванов",
+​        "mobile": "0987654321",
+        "orderTime": "28.12, 18:00",
+        "payment": "Карта", 
+        "sum": "367"
+      },
+      {
+        "address": "Київ, вулиця Олександрівська 10-в",
+​        "comment": "",
+​        "email": "mashamisha@gmail.com",
+        "firstName": "Марія",
+​        "id": "2",
+​        "lastName": "Мішина",
+​        "mobile": "0967548934",
+        "orderTime": "30.12, 10:00",
+        "payment": "Готівка",
+        "sum": "1248"
+      }
+
     ]
 
   

@@ -31,6 +31,9 @@ function renderCart() {
     if (main.parentNode.parentNode.classList.contains('one-page-main')) {
         main.parentNode.parentNode.classList.remove('one-page-main')
     }
+    if (header.classList.contains('one-page-header')) {
+        header.classList.remove('one-page-header')
+    }
     main.appendChild(loader)
     const table = createCartTable()
     for (let i = 0; i < cart.length; i++) {
@@ -61,6 +64,9 @@ function renderOrder() {
     main.innerHTML = ''
     if (main.parentNode.parentNode.classList.contains('one-page-main')) {
         main.parentNode.parentNode.classList.remove('one-page-main')
+    }
+    if (header.classList.contains('one-page-header')) {
+        header.classList.remove('one-page-header')
     }
     main.appendChild(createForm())
 }
@@ -106,7 +112,8 @@ async function checkForm() {
         payment: allInputs[4].value,
         mobile: allInputs[5].value,
         email: allInputs[6].value,
-        comment: comment.value
+        comment: comment.value,
+        sum: countSum()
 
     }
     sendDataToServer(orderDetails)
@@ -137,4 +144,16 @@ function inputEmpty(input) {
 
 async function sendDataToServer(orderDetails) {
     const response = await fetch('https://my-json-server.typicode.com/dariiagrim/fruitsLab/orders', {method: "POST", headers: {"Content-Type":"application/json"}, body: JSON.stringify(orderDetails)})
+    const data = await response.json()
+    console.log(data)
+    cart = []
 }
+
+function countSum() {
+    let sum = 0
+    for (let i = 0; i < cart.length; i++) {
+        sum += cart[i].priceInt * cart[i].amountInCart
+    }
+    return sum
+}
+

@@ -16,10 +16,12 @@ let allProducts = []
 for (let i = 0; i < 26; i++) {
     allProducts.push(new Product(i))
 }
-console.log(allProducts)
+
 let cart = []
 let cartLength = 0
 const cartIcon = document.querySelector('.cart')
+const header = document.querySelector('.header')
+
 
 
 window.addEventListener('click', function(event) {
@@ -49,6 +51,7 @@ window.addEventListener('click', function(event) {
 async function renderOneProductInfo(id) {
     main.innerHTML = ''
     main.parentNode.parentNode.classList.add('one-page-main')
+    header.classList.add('one-page-header')
     main.appendChild(loader)
     const allReq = await fetch('https://my-json-server.typicode.com/dariiagrim/fruitsLab/all', {method: "GET", headers: {"Content-Type":"application/json"}})
     const dataAll = await allReq.json()
