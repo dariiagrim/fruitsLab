@@ -56,6 +56,7 @@ function createSalesBlock(text1, text2, text3, text4) {
 } 
 
 async function renderMain() {
+    window.location.hash = ""
     main.innerHTML = ""
     if (main.parentNode.parentNode.classList.contains('one-page-main')) {
         main.parentNode.parentNode.classList.remove('one-page-main')

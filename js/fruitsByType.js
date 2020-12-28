@@ -26,6 +26,7 @@ allLink.onclick = function(e) {
 }
 
 async function renderSweetFruits() {
+    window.location.hash = "#/sweet"
     main.innerHTML = ''
     if (main.parentNode.parentNode.classList.contains('one-page-main')) {
         main.parentNode.parentNode.classList.remove('one-page-main')
@@ -45,6 +46,7 @@ async function renderSweetFruits() {
 }
 
 async function renderSourFruits() {
+    window.location.hash = "#/sour"
     main.innerHTML = ''
     if (main.parentNode.parentNode.classList.contains('one-page-main')) {
         main.parentNode.parentNode.classList.remove('one-page-main')
@@ -64,6 +66,7 @@ async function renderSourFruits() {
 }
 
 async function renderNeutralFruits() {
+    window.location.hash = "#/neutral"
     main.innerHTML = ''
     if (main.parentNode.parentNode.classList.contains('one-page-main')) {
         main.parentNode.parentNode.classList.remove('one-page-main')
@@ -83,6 +86,7 @@ async function renderNeutralFruits() {
 }
 
 async function renderAllFruits() {
+    window.location.hash = "#/all"
     main.innerHTML = ''
     if (main.parentNode.parentNode.classList.contains('one-page-main')) {
         main.parentNode.parentNode.classList.remove('one-page-main')
